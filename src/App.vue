@@ -18,28 +18,31 @@ const lists = [
   {
     name: "VS",
     christmas_msg: "Feliz Navidad",
-    reel: "./assets/images/reel1.png",
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel1.png?alt=media&token=1266b937-4bfd-4586-b555-ff71f6312021",
     numIcons: 114,
     primaryColor: "#D59C00",
-    background_image: "./assets/images/background-doradobet.png",
+    background_image:
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-doradobet.png?alt=media&token=40ac9c3d-61e0-4171-94b6-476aee0c9be8",
     row_reverse: false,
   },
   {
     name: "Quota",
     christmas_msg: "Feliz Navidad",
-    reel: "./assets/images/reel2.png",
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel2.png?alt=media&token=63bfd485-0162-425b-acac-9b30e0f8a41c",
     numIcons: 28,
     primaryColor: "#ABC90B",
-    background_image: "./assets/images/background-lotosport.png",
+    background_image:
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-lotosport.png?alt=media&token=b39fe1ef-4e9b-4fcd-8ce2-e6369e495f9c",
     row_reverse: true,
   },
   {
     name: "VS - Quota",
     christmas_msg: "Feliz Navidad",
-    reel: "./assets/images/reel3.png",
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel3.png?alt=media&token=a7d88487-f8e5-4c94-9af0-6ff906985cca",
     numIcons: 121,
     primaryColor: "#FFD028",
-    background_image: "./assets/images/background-ecuabet.png",
+    background_image:
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-ecuabet.png?alt=media&token=55f84b90-873a-41fc-a2e2-6057022ca165",
     row_reverse: true,
   },
 ];
@@ -122,7 +125,7 @@ const toggleActive = () => {
         <img
           alt="maquina tragamonedas"
           class="absolute w-full h-full"
-          src="./assets/images/jackpot.webp"
+          src="https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/jackpot.webp?alt=media&token=41f47574-3be7-44fa-a8f4-2f721e7b1f58"
         />
         <!--Jackpot-->
         <div
@@ -191,14 +194,14 @@ const toggleActive = () => {
         <img
           alt="palanca"
           class="absolute top-[175px] -right-3 sm:top-[280px] sm:-right-6 w-[10%] cursor-default"
-          src="./assets/images/PalancaA.svg"
+          src="https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/PalancaA.svg?alt=media&token=48dd3d2f-9030-47d1-9252-7f867bb35f76"
         />
         <img
           :class="`${
             isActive ? 'rotate-hor-bottom' : ''
           } cursor-pointer absolute sm:top-[99px] top-[70px] -right-[34px] sm:-right-[61px] w-1/6`"
           alt="palanca"
-          src="./assets/images/PalancaB.svg"
+          src="https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/PalancaB.svg?alt=media&token=cd71a013-e869-4e08-ab07-998f55678e6b"
           @click="toggleActive"
         />
       </div>
