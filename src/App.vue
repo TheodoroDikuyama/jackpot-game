@@ -1,14 +1,10 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
 
-const numIcons = 121;
 const timePerIcon = 50;
 const indexes = ref([0, 0, 0, 0]);
 
-const iconWidthDesktop = 58 * 4;
 const iconHeightDesktop = 116;
-const iconWidthMobile = 30;
-const iconHeightMobile = 66;
 
 const isActive = ref(false);
 const isWin1 = ref(false);
@@ -18,31 +14,31 @@ const lists = [
   {
     name: "VS",
     christmas_msg: "Feliz Navidad",
-    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel1.png?alt=media&token=1266b937-4bfd-4586-b555-ff71f6312021",
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel1.webp?alt=media&token=24ba37e4-bbf4-46d6-a12a-d498340f2225",
     numIcons: 114,
     primaryColor: "#D59C00",
     background_image:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-doradobet.png?alt=media&token=40ac9c3d-61e0-4171-94b6-476aee0c9be8",
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-doradobet.webp?alt=media&token=fd0a3a55-5c6b-4052-99f9-82d0cefa2681",
     row_reverse: false,
   },
   {
     name: "Quota",
     christmas_msg: "Feliz Navidad",
-    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel2.png?alt=media&token=63bfd485-0162-425b-acac-9b30e0f8a41c",
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel2.webp?alt=media&token=8ec07c42-3755-48e8-b2c6-6b78c7bc09c7",
     numIcons: 28,
     primaryColor: "#ABC90B",
     background_image:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-lotosport.png?alt=media&token=b39fe1ef-4e9b-4fcd-8ce2-e6369e495f9c",
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-lotosport.webp?alt=media&token=1e9bdbe1-026e-47f9-9307-9a67076f0e61",
     row_reverse: true,
   },
   {
     name: "VS - Quota",
     christmas_msg: "Feliz Navidad",
-    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel3.png?alt=media&token=a7d88487-f8e5-4c94-9af0-6ff906985cca",
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel3.webp?alt=media&token=e9c33490-cb88-48e5-89d2-b7a03f872cb6",
     numIcons: 121,
     primaryColor: "#FFD028",
     background_image:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-ecuabet.png?alt=media&token=55f84b90-873a-41fc-a2e2-6057022ca165",
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-ecuabet.webp?alt=media&token=48892d9f-b209-4380-b4ad-42bdb2f9839f",
     row_reverse: true,
   },
 ];
@@ -125,7 +121,7 @@ const toggleActive = () => {
         <img
           alt="maquina tragamonedas"
           class="absolute w-full h-full"
-          src="https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/jackpot.webp?alt=media&token=41f47574-3be7-44fa-a8f4-2f721e7b1f58"
+          src="https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/jackpot.webp?alt=media&token=f1629709-d7ff-48fd-a181-58ae561429a7"
         />
         <!--Jackpot-->
         <div
