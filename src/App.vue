@@ -18,28 +18,28 @@ const lists = [
   {
     name: "VS",
     christmas_msg: "Feliz Navidad",
-    reel: "../src/assets/images/reel1.png",
+    reel: "./assets/images/reel1.png",
     numIcons: 114,
     primaryColor: "#D59C00",
-    background_image: "../src/assets/images/background-doradobet.png",
+    background_image: "./assets/images/background-doradobet.png",
     row_reverse: false,
   },
   {
     name: "Quota",
     christmas_msg: "Feliz Navidad",
-    reel: "../src/assets/images/reel2.png",
+    reel: "./assets/images/reel2.png",
     numIcons: 28,
     primaryColor: "#ABC90B",
-    background_image: "../src/assets/images/background-lotosport.png",
+    background_image: "./assets/images/background-lotosport.png",
     row_reverse: true,
   },
   {
     name: "VS - Quota",
     christmas_msg: "Feliz Navidad",
-    reel: "../src/assets/images/reel3.png",
+    reel: "./assets/images/reel3.png",
     numIcons: 121,
     primaryColor: "#FFD028",
-    background_image: "../src/assets/images/background-ecuabet.png",
+    background_image: "./assets/images/background-ecuabet.png",
     row_reverse: true,
   },
 ];
@@ -191,14 +191,14 @@ const toggleActive = () => {
         <img
           alt="palanca"
           class="absolute top-[175px] -right-3 sm:top-[280px] sm:-right-6 w-[10%] cursor-default"
-          src="../src/assets/images/PalancaA.svg"
+          src="./assets/images/PalancaA.svg"
         />
         <img
           :class="`${
             isActive ? 'rotate-hor-bottom' : ''
           } cursor-pointer absolute sm:top-[99px] top-[70px] -right-[34px] sm:-right-[61px] w-1/6`"
           alt="palanca"
-          src="../src/assets/images/PalancaB.svg"
+          src="./assets/images/PalancaB.svg"
           @click="toggleActive"
         />
       </div>
