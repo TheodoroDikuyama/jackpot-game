@@ -42,9 +42,10 @@ const lists = [
     numIcons: 28,
     primaryColor: "#ABC90B",
     background_image:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Sonido_Quota.mp3?alt=media&token=ab1d5064-b25d-4784-82e6-dc6f048432db",
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-lotosport.webp?alt=media&token=1e9bdbe1-026e-47f9-9307-9a67076f0e61",
     row_reverse: true,
-    source_audio: "../src/assets/Sonido_Quota.mp3",
+    source_audio:
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Sonido_Quota.mp3?alt=media&token=ab1d5064-b25d-4784-82e6-dc6f048432db",
   },
   {
     name: "VS - Quota",
@@ -53,9 +54,10 @@ const lists = [
     numIcons: 113,
     primaryColor: "#FFD028",
     background_image:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Virtual%20_Quota.mp3?alt=media&token=ac63ea97-3888-4dc2-bf1f-febce901b27c",
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-ecuabet.webp?alt=media&token=48892d9f-b209-4380-b4ad-42bdb2f9839f",
     row_reverse: true,
-    source_audio: "../src/assets/Virtual _Quota.mp3",
+    source_audio:
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Virtual_Quota.mp3?alt=media&token=702ebeaa-04f8-4fda-b2cd-527f022492b4",
   },
 ];
 const selectedList = ref(lists[0]); // default list
