@@ -32,7 +32,8 @@ const lists = [
     background_image:
       "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-doradobet.webp?alt=media&token=fd0a3a55-5c6b-4052-99f9-82d0cefa2681",
     row_reverse: false,
-    source_audio: "../src/assets/Sonido_Virtual.mp3",
+    source_audio:
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Sonido_Virtual.mp3?alt=media&token=367e3bff-3237-447f-90ed-64283c706274",
   },
   {
     name: "Quota",
@@ -41,7 +42,7 @@ const lists = [
     numIcons: 28,
     primaryColor: "#ABC90B",
     background_image:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-lotosport.webp?alt=media&token=1e9bdbe1-026e-47f9-9307-9a67076f0e61",
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Sonido_Quota.mp3?alt=media&token=ab1d5064-b25d-4784-82e6-dc6f048432db",
     row_reverse: true,
     source_audio: "../src/assets/Sonido_Quota.mp3",
   },
@@ -52,7 +53,7 @@ const lists = [
     numIcons: 113,
     primaryColor: "#FFD028",
     background_image:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-ecuabet.webp?alt=media&token=48892d9f-b209-4380-b4ad-42bdb2f9839f",
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Virtual%20_Quota.mp3?alt=media&token=ac63ea97-3888-4dc2-bf1f-febce901b27c",
     row_reverse: true,
     source_audio: "../src/assets/Virtual _Quota.mp3",
   },
