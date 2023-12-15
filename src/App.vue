@@ -32,6 +32,7 @@ const lists = [
     background_image:
       "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-doradobet.webp?alt=media&token=fd0a3a55-5c6b-4052-99f9-82d0cefa2681",
     row_reverse: false,
+    source_audio: "../src/assets/Sonido_Virtual.mp3",
   },
   {
     name: "Quota",
@@ -42,6 +43,7 @@ const lists = [
     background_image:
       "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-lotosport.webp?alt=media&token=1e9bdbe1-026e-47f9-9307-9a67076f0e61",
     row_reverse: true,
+    source_audio: "../src/assets/Sonido_Quota.mp3",
   },
   {
     name: "VS - Quota",
@@ -52,6 +54,7 @@ const lists = [
     background_image:
       "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-ecuabet.webp?alt=media&token=48892d9f-b209-4380-b4ad-42bdb2f9839f",
     row_reverse: true,
+    source_audio: "../src/assets/Virtual _Quota.mp3",
   },
 ];
 const selectedList = ref(lists[0]); // default list
@@ -290,7 +293,7 @@ const toggleActive = () => {
         {{ selectedList.christmas_msg }} {{ selectedList.name }}
       </h1>
       <audio ref="miAudio" style="display: none">
-        <source src="../src/assets/Sonido_Quota.mp3" type="audio/mpeg" />
+        <source :src="selectedList.source_audio" type="audio/mpeg" />
       </audio>
     </div>
   </div>
