@@ -26,14 +26,12 @@ const lists = [
   {
     name: "VS",
     christmas_msg: "Feliz Navidad",
-    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel1.webp?alt=media&token=24ba37e4-bbf4-46d6-a12a-d498340f2225",
-    numIcons: 114,
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel1.webp?alt=media&token=490b2fe1-8381-4565-ad5b-c018924b4697",
+    numIcons: 112,
     primaryColor: "#D59C00",
     background_image:
       "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-doradobet.webp?alt=media&token=fd0a3a55-5c6b-4052-99f9-82d0cefa2681",
     row_reverse: false,
-    source_audio:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Sonido_Virtual.mp3?alt=media&token=367e3bff-3237-447f-90ed-64283c706274",
   },
   {
     name: "Quota",
@@ -44,31 +42,31 @@ const lists = [
     background_image:
       "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-lotosport.webp?alt=media&token=1e9bdbe1-026e-47f9-9307-9a67076f0e61",
     row_reverse: true,
-    source_audio:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Sonido_Quota.mp3?alt=media&token=ab1d5064-b25d-4784-82e6-dc6f048432db",
   },
   {
     name: "VS - Quota",
     christmas_msg: "Feliz Navidad",
-    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel3.webp?alt=media&token=cf21a38d-ac6d-43c8-b47a-283429a0cc27",
-    numIcons: 113,
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel3.webp?alt=media&token=410ddfa5-f586-488b-9cec-5f256926d35a",
+    numIcons: 97,
     primaryColor: "#FFD028",
     background_image:
       "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-ecuabet.webp?alt=media&token=48892d9f-b209-4380-b4ad-42bdb2f9839f",
     row_reverse: true,
-    source_audio:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Virtual_Quota.mp3?alt=media&token=702ebeaa-04f8-4fda-b2cd-527f022492b4",
   },
 ];
 const selectedList = ref(lists[0]); // default list
 
 const isPlaying = ref(false);
 const miAudio = ref(null);
+const miAudio1 = ref(null);
+
 watchEffect(() => {
   if (isActive.value && miAudio.value) {
     miAudio.value.play();
-  } else {
-    // not mounted yet, or the element was unmounted (e.g. by v-if)
+  } else if (isWin1.value) {
+    miAudio.value.pause();
+    miAudio.value.currentTime = 0;
+    miAudio1.value.play();
   }
 });
 function changeList(listName) {
@@ -296,7 +294,10 @@ const toggleActive = () => {
         {{ selectedList.christmas_msg }} {{ selectedList.name }}
       </h1>
       <audio ref="miAudio" style="display: none">
-        <source :src="selectedList.source_audio" type="audio/mpeg" />
+        <source src="../src/assets/001.MP3" type="audio/mpeg" />
+      </audio>
+      <audio ref="miAudio1" style="display: none">
+        <source src="../src/assets/002.MP3" type="audio/mpeg" />
       </audio>
     </div>
   </div>
