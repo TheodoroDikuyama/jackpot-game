@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watchEffect } from "vue";
+
 const timePerIcon = 50;
 const indexes = ref([0, 0, 0, 0]);
 
@@ -26,8 +27,8 @@ const lists = [
   {
     name: "VS",
     christmas_msg: "Feliz Navidad",
-    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel1.webp?alt=media&token=490b2fe1-8381-4565-ad5b-c018924b4697",
-    numIcons: 112,
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel1.webp?alt=media&token=88c02a06-81ef-4ae0-a64a-d02a8535f6ff",
+    numIcons: 111,
     primaryColor: "#D59C00",
     background_image:
       "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-doradobet.webp?alt=media&token=fd0a3a55-5c6b-4052-99f9-82d0cefa2681",
@@ -46,8 +47,8 @@ const lists = [
   {
     name: "VS - Quota",
     christmas_msg: "Feliz Navidad",
-    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel3.webp?alt=media&token=410ddfa5-f586-488b-9cec-5f256926d35a",
-    numIcons: 97,
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/reel3.webp?alt=media&token=fdebd364-2082-4d37-8255-ad8e5d294944",
+    numIcons: 95,
     primaryColor: "#FFD028",
     background_image:
       "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-ecuabet.webp?alt=media&token=48892d9f-b209-4380-b4ad-42bdb2f9839f",
@@ -69,6 +70,7 @@ watchEffect(() => {
     miAudio1.value.play();
   }
 });
+
 function changeList(listName) {
   const reel = document.querySelector(".slots .reel");
   if (listName === "VS") {
@@ -294,10 +296,16 @@ const toggleActive = () => {
         {{ selectedList.christmas_msg }} {{ selectedList.name }}
       </h1>
       <audio ref="miAudio" style="display: none">
-        <source src="../src/assets/001.MP3" type="audio/mpeg" />
+        <source
+          src="https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/001.MP3?alt=media&token=ea2e090d-80d0-4533-808b-8673fc0dfc90"
+          type="audio/mpeg"
+        />
       </audio>
       <audio ref="miAudio1" style="display: none">
-        <source src="../src/assets/002.MP3" type="audio/mpeg" />
+        <source
+          src="https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/002.MP3?alt=media&token=ce67ec18-6a05-44b9-9f98-1fa34ca743fd"
+          type="audio/mpeg"
+        />
       </audio>
     </div>
   </div>
