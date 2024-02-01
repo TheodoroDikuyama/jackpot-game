@@ -24,8 +24,8 @@ const isWin2 = ref(false);
 
 const lists = [
   {
-    name: "VS",
-    christmas_msg: "Feliz Navidad",
+    name: "Dani",
+    christmas_msg: "Sorteo",
     reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/lista_ids.webp?alt=media&token=be53035c-57c0-41ba-80a2-1630e408af03",
     numIcons: 135,
     primaryColor: "#D59C00",
