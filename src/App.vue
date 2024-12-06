@@ -23,11 +23,11 @@ const isActive = ref(false);
 const isWin1 = ref(false);
 const isWin2 = ref(false);
 
-const lists = [
+const list = [
   {
     name: "",
     christmas_msg: "Fiesta Navidad 2024",
-    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/sorteo2024.png?alt=media&token=fdb46360-ca59-4be4-82f5-027803561c54",
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Frame111zon.webp?alt=media&token=22c6cd4a-d5bf-407e-a334-6e23043d7aa0",
     numIcons: 149,
     primaryColor: "#D59C00",
     background_image:
@@ -35,7 +35,6 @@ const lists = [
     row_reverse: false,
   },
 ];
-const selectedList = ref(lists[0]); // default list
 
 const isPlaying = ref(false);
 const miAudio = ref(null);
@@ -55,14 +54,14 @@ const roll = (reel, offset = 0) => {
   const iconHeight =
     window.innerWidth >= 480 ? iconHeightDesktop : iconHeightMobile;
   const delta =
-    (offset + 2) * selectedList.value.numIcons +
-    Math.round(Math.random() * selectedList.value.numIcons); // Number of icons to roll
+    (offset + 2) * list[0].numIcons +
+    Math.round(Math.random() * list[0].numIcons); // Number of icons to roll
   return new Promise((resolve) => {
     const style = getComputedStyle(reel);
     const backgroundPositionY = parseFloat(style["background-position-y"]);
     const targetBackgroundPositionY = backgroundPositionY + delta * iconHeight;
     const normTargetBackgroundPositionY =
-      targetBackgroundPositionY % (selectedList.value.numIcons * iconHeight);
+      targetBackgroundPositionY % (list[0].numIcons * iconHeight);
     setTimeout(() => {
       reel.style.transition = `background-position-y ${
         (3 + 1 * delta) * timePerIcon
@@ -75,7 +74,7 @@ const roll = (reel, offset = 0) => {
     setTimeout(() => {
       reel.style.transition = "none";
       reel.style.backgroundPositionY = `${normTargetBackgroundPositionY}px`;
-      resolve(delta % selectedList.value.numIcons);
+      resolve(delta % list[0].numIcons);
     }, (3 + 1 * delta) * timePerIcon + offset * 150);
   });
 };
@@ -85,8 +84,7 @@ const rollAll = () => {
   Promise.all([...reelsList].map((reel, i) => roll(reel, i))).then((deltas) => {
     deltas.forEach(
       (delta, i) =>
-        (indexes.value[i] =
-          (indexes.value[i] + delta) % selectedList.value.numIcons)
+        (indexes.value[i] = (indexes.value[i] + delta) % list[0].numIcons)
     );
 
     fire(0.25, {
@@ -135,14 +133,14 @@ const toggleActive = () => {
 <template>
   <div class="relative w-screen h-screen overflow-hidden">
     <img
-      :src="selectedList.background_image"
+      :src="list[0].background_image"
       alt="background mantenimiento"
       class="w-full h-full absolute"
     />
 
     <div
       :class="`absolute mt-8 sm:mt-2 h-[60%] sm:h-screen flex flex-col items-center justify-evenly sm:top-0 top-1/3 ${
-        selectedList.row_reverse ? 'sm:right-0' : 'sm:left-0'
+        list[0].row_reverse ? 'sm:right-0' : 'sm:left-0'
       } w-full sm:w-1/2`"
     >
       <div class="relative sm:h-[510px] sm:w-[350px] h-[350px] w-[200px]">
@@ -232,14 +230,14 @@ const toggleActive = () => {
     </div>
     <div
       :class="`absolute flex flex-col items-center mt-6 gap-2 sm:gap-5 sm:justify-center top-0 sm:h-screen  h-1/3  sm:top-0 ${
-        selectedList.row_reverse ? 'sm:left-0' : 'sm:right-0'
+        list[0].row_reverse ? 'sm:left-0' : 'sm:right-0'
       } sm:right-0 w-full sm:w-1/2`"
     >
       <h1
-        :style="{ color: selectedList.primaryColor }"
+        :style="{ color: list[0].primaryColor }"
         class="w-[80%] text-center font-extrabold text-7xl"
       >
-        {{ selectedList.christmas_msg }} {{ selectedList.name }}
+        {{ list[0].christmas_msg }} {{ list[0].name }}
       </h1>
       <audio ref="miAudio" style="display: none">
         <source
@@ -305,10 +303,7 @@ const toggleActive = () => {
   height: 100%;
   border-right: 7px solid #746f6f;
   overflow: hidden;
-  background-image: url(https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/sorteo2024.png?alt=media&token=fdb46360-ca59-4be4-82f5-027803561c54);
-  @media screen and (max-width: 480px) {
-    background: url(https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/sorteo2024.png?alt=media&token=fdb46360-ca59-4be4-82f5-027803561c54);
-  }
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Frame111zon.webp?alt=media&token=22c6cd4a-d5bf-407e-a334-6e23043d7aa0);
   background-position: 0 0;
   background-repeat: repeat-y;
 }
