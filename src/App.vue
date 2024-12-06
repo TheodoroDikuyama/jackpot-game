@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watchEffect } from "vue";
 
-const timePerIcon = 15;
+const timePerIcon = 10;
 const indexes = ref([0, 0, 0, 0]);
 
 const iconHeightDesktop = 116;
