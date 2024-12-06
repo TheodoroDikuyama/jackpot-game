@@ -27,7 +27,7 @@ const list = [
   {
     name: "",
     christmas_msg: "Fiesta Navidad 2024",
-    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Frame111zon.webp?alt=media&token=22c6cd4a-d5bf-407e-a334-6e23043d7aa0",
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Frame555.webp?alt=media&token=587a5689-25ab-4486-904c-216f26c14cba",
     numIcons: 149,
     primaryColor: "#D59C00",
     background_image:
@@ -56,6 +56,7 @@ const roll = (reel, offset = 0) => {
   const delta =
     (offset + 2) * list[0].numIcons +
     Math.round(Math.random() * list[0].numIcons); // Number of icons to roll
+
   return new Promise((resolve) => {
     const style = getComputedStyle(reel);
     const backgroundPositionY = parseFloat(style["background-position-y"]);
@@ -303,7 +304,7 @@ const toggleActive = () => {
   height: 100%;
   border-right: 7px solid #746f6f;
   overflow: hidden;
-  background-image: url(https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Frame111zon.webp?alt=media&token=22c6cd4a-d5bf-407e-a334-6e23043d7aa0);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Frame555.webp?alt=media&token=587a5689-25ab-4486-904c-216f26c14cba);
   background-position: 0 0;
   background-repeat: repeat-y;
 }
