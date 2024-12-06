@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watchEffect } from "vue";
 
-const timePerIcon = 10;
+const timePerIcon = 8;
 const indexes = ref([0, 0, 0, 0]);
 
 const iconHeightDesktop = 116;
@@ -31,7 +31,7 @@ const list = [
     numIcons: 149,
     primaryColor: "#D59C00",
     background_image:
-      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background-doradobet.webp?alt=media&token=fd0a3a55-5c6b-4052-99f9-82d0cefa2681",
+      "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/background2024_11zon.webp?alt=media&token=acdbde0f-6651-43e4-875a-5fe5096da4f3",
     row_reverse: false,
   },
 ];
