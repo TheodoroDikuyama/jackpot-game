@@ -27,7 +27,7 @@ const list = [
   {
     name: "",
     christmas_msg: "Fiesta Navidad 2024",
-    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Frame555.webp?alt=media&token=587a5689-25ab-4486-904c-216f26c14cba",
+    reel: "https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Completo.webp?alt=media&token=ee14ae03-dfd1-4369-9974-12cc4c78bf78",
     numIcons: 149,
     primaryColor: "#D59C00",
     background_image:
@@ -320,7 +320,7 @@ const toggleActive = () => {
   height: 100%;
   border-right: 7px solid #746f6f;
   overflow: hidden;
-  background-image: url(https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Frame555.webp?alt=media&token=587a5689-25ab-4486-904c-216f26c14cba);
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/jackpot-game-9c133.appspot.com/o/Completo.webp?alt=media&token=ee14ae03-dfd1-4369-9974-12cc4c78bf78);
   background-position: 0 0;
   background-repeat: repeat-y;
 }
