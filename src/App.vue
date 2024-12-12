@@ -50,48 +50,52 @@ watchEffect(() => {
   }
 });
 
+const recentIndexes = []; // Arreglo para almacenar los últimos 3 índices
+
 const roll = (reel, offset = 0) => {
   const iconHeight =
     window.innerWidth >= 480 ? iconHeightDesktop : iconHeightMobile;
 
-  // Generar un factor aleatorio dinámico para cada giro
   const randomFactor = Math.random() * 1.5 + 1; // Factor entre 1 y 2.5
   const minSpins = 5; // Vueltas mínimas
   const maxSpins = 10; // Vueltas máximas
   const spins = Math.floor(Math.random() * (maxSpins - minSpins) + minSpins); // Vueltas aleatorias
 
-  // Calcular el delta total (número de pasos)
-  const previousIndex = indexes.value[offset]; // Índice previo del carrete
-  let delta;
+  let delta, newIndex;
   do {
     delta =
       spins * list[0].numIcons + Math.floor(Math.random() * list[0].numIcons);
-  } while (delta % list[0].numIcons === previousIndex); // Evitar caer en el mismo ícono
+    newIndex = delta % list[0].numIcons; // Cálculo del índice final
+  } while (recentIndexes.includes(newIndex)); // Recalcular si está en los últimos 3 índices
+
+  // Actualizar el arreglo de índices recientes
+  recentIndexes.push(newIndex);
+  if (recentIndexes.length > 5) {
+    recentIndexes.shift(); // Eliminar el índice más antiguo si hay más de 3
+  }
+
+  console.log(recentIndexes);
 
   return new Promise((resolve) => {
     const style = getComputedStyle(reel);
     const backgroundPositionY = parseFloat(style["background-position-y"]);
     const targetBackgroundPositionY = backgroundPositionY + delta * iconHeight;
 
-    // Normalizar la posición al final del giro
     const normTargetBackgroundPositionY =
       targetBackgroundPositionY % (list[0].numIcons * iconHeight);
 
-    // Aleatorizar duración de la animación
     const transitionDuration =
       (spins + Math.random() * 2) * timePerIcon * randomFactor;
 
     setTimeout(() => {
       reel.style.transition = `background-position-y ${transitionDuration}ms cubic-bezier(.41,-0.01,.63,1.09)`;
-      reel.style.backgroundPositionY = `${
-        backgroundPositionY + delta * iconHeight
-      }px`;
+      reel.style.backgroundPositionY = `${targetBackgroundPositionY}px`;
     }, offset * 150);
 
     setTimeout(() => {
       reel.style.transition = "none";
       reel.style.backgroundPositionY = `${normTargetBackgroundPositionY}px`;
-      resolve(delta % list[0].numIcons);
+      resolve(newIndex); // Devolver el índice final calculado
     }, transitionDuration + offset * 150);
   });
 };
