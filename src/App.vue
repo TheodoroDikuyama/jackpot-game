@@ -50,42 +50,35 @@ watchEffect(() => {
   }
 });
 
-const recentIndexes = []; // Arreglo para almacenar los últimos 3 índices
+const iconIds = Array.from({ length: 149 }, (_, i) => i + 1); // Índices estáticos del 1 al 149
+const recentIndexes = []; // Últimos 3 índices seleccionados
 
 const roll = (reel, offset = 0) => {
   const iconHeight =
     window.innerWidth >= 480 ? iconHeightDesktop : iconHeightMobile;
 
-  const randomFactor = Math.random() * 1.5 + 1; // Factor entre 1 y 2.5
   const minSpins = 5; // Vueltas mínimas
   const maxSpins = 10; // Vueltas máximas
   const spins = Math.floor(Math.random() * (maxSpins - minSpins) + minSpins); // Vueltas aleatorias
 
-  let delta, newIndex;
+  let newIndex;
   do {
-    delta =
-      spins * list[0].numIcons + Math.floor(Math.random() * list[0].numIcons);
-    newIndex = delta % list[0].numIcons; // Cálculo del índice final
-  } while (recentIndexes.includes(newIndex)); // Recalcular si está en los últimos 3 índices
+    // Calcula un índice aleatorio evitando repeticiones
+    newIndex = Math.floor(Math.random() * iconIds.length);
+  } while (recentIndexes.includes(iconIds[newIndex]));
 
-  // Actualizar el arreglo de índices recientes
-  recentIndexes.push(newIndex);
+  // Actualiza los índices recientes
+  recentIndexes.push(iconIds[newIndex]);
   if (recentIndexes.length > 5) {
-    recentIndexes.shift(); // Eliminar el índice más antiguo si hay más de 3
+    recentIndexes.shift(); // Elimina el índice más antiguo
   }
-
   console.log(recentIndexes);
+  // Cálculo del desplazamiento en base al índice
+  const delta = spins * iconIds.length + newIndex; // Calcula el desplazamiento total
+  const targetBackgroundPositionY = delta * iconHeight;
 
   return new Promise((resolve) => {
-    const style = getComputedStyle(reel);
-    const backgroundPositionY = parseFloat(style["background-position-y"]);
-    const targetBackgroundPositionY = backgroundPositionY + delta * iconHeight;
-
-    const normTargetBackgroundPositionY =
-      targetBackgroundPositionY % (list[0].numIcons * iconHeight);
-
-    const transitionDuration =
-      (spins + Math.random() * 2) * timePerIcon * randomFactor;
+    const transitionDuration = (spins + Math.random() * 2) * 200; // Duración de la animación
 
     setTimeout(() => {
       reel.style.transition = `background-position-y ${transitionDuration}ms cubic-bezier(.41,-0.01,.63,1.09)`;
@@ -94,8 +87,9 @@ const roll = (reel, offset = 0) => {
 
     setTimeout(() => {
       reel.style.transition = "none";
-      reel.style.backgroundPositionY = `${normTargetBackgroundPositionY}px`;
-      resolve(newIndex); // Devolver el índice final calculado
+      const normalizedIndex = newIndex % iconIds.length; // Asegura que el índice esté en rango
+      reel.style.backgroundPositionY = `${normalizedIndex * iconHeight}px`;
+      resolve(iconIds[normalizedIndex]); // Devuelve el índice fijo
     }, transitionDuration + offset * 150);
   });
 };
